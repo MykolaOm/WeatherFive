@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>848278075964-4u62uqal7m6hfubcfbno0nclpd054dl9.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.848278075964-4u62uqal7m6hfubcfbno0nclpd054dl9</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC8PPxngMvrSHVdmgJFm0ZSsM_TY_gv9OM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>848278075964</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.nikolasomelianov.WeatherFive</string>
+	<key>PROJECT_ID</key>
+	<string>weatherfive</string>
+	<key>STORAGE_BUCKET</key>
+	<string>weatherfive.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:848278075964:ios:b6d85e8024b3ac2d</string>
+	<key>DATABASE_URL</key>
+	<string>https://weatherfive.firebaseio.com</string>
+</dict>
+</plist>
