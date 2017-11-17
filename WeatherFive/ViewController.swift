@@ -22,6 +22,7 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
     var currentCity : String = "Vinnitsia"
     var weekDays = "Mon Tue Wed Thu Fri Sat Sun"
     var weatherForWeek = ""
+    var retrievedCities  : [String] = []
     
     @IBOutlet weak var firstNightLabel: UILabel!
     @IBOutlet weak var firstDayLabel: UILabel!
@@ -70,7 +71,7 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
         
         WEATHER_URL = firstUrlPart + userCitiesArray[row] + lastUrlPart
         getWeatherData(url: WEATHER_URL)
-//        retrieveCities()
+        retrieveCities()
         pickerView.reloadAllComponents()
     }
     
@@ -159,11 +160,7 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
         else {
             print( "Weather Unavailable")
         }
-        weekDays = ""
-        for day in arrayOfWeekDays{
-            weekDays += "\(day) "
-        }
-        concateTemperatures()
+
         updateLabel()
     }
     // MARK: CONVERTER
@@ -177,36 +174,37 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
 
     
     // MARK --- observe dara from db firebase
-    
-    func addCity() {
-        loginDB()
-        let cityDB = Database.database().reference().child("city")
-        cityDB.child("paris").setValue(["fr":"paris"])
-        print("valueok")
-    }
-    
     //*--------------------------------------------------------*//
     
     func retrieveCities(){
+        
         loginDB()
         let cityDB = Database.database().reference().child("city")
         var groupCity = [String]()
         cityDB.observe(.value, with:{
             snapshot in
+            self.retrievedCities.removeAll()
             for item in snapshot.children{
                 groupCity.append((item as AnyObject).key)
             }
             for city in groupCity {
-                if self.userCitiesArray.contains(city){
+                if self.retrievedCities.contains(city){
+                    print("city already exist")
                     continue
                 }
                 else{
-                    self.userCitiesArray.append(city)
+                    self.retrievedCities.append(city)
+                    print("city added")
                 }
             }
- 
+            self.userCitiesArray.removeAll()
+            self.userCitiesArray.append("Vinnitsia")
+            self.userCitiesArray.append("Kyiv")
+            self.userCitiesArray += self.retrievedCities
+            print(self.userCitiesArray)
+            print("in retriev1")
         })
-        print(userCitiesArray)
+       
     }
     
     //---------------------------
@@ -228,31 +226,26 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
     
     
       //---------------------------
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "sendDataForwards"{
             let detailViewController = segue.destination as! DetailViewController
-            detailViewController.cityInfodata = "\(currentCity), \(cityDescription)"
-            detailViewController.weatherForWeek = weatherForWeek
-            detailViewController.weekDays = weekDays
-            
+            detailViewController.morningTemperature = morningTemperature
+            detailViewController.nightTemperature = nightTemperature
+            detailViewController.arrayOfDate = arrayOfDate
+            detailViewController.arrayOfWeekDays = arrayOfWeekDays
+            detailViewController.currentCity = currentCity
+            detailViewController.cityInfodata = currentCity + ", " + cityDescription
+            detailViewController.cityDescription = cityDescription
+ 
         }
     }
     
-    func concateTemperatures(){
-        weatherForWeek = ""
-        for item in morningTemperature{
-            weatherForWeek += item
-            weatherForWeek += " "
-        }
-        weatherForWeek += "\n"
-        for item in nightTemperature{
-            weatherForWeek += item
-            weatherForWeek += " "
-        }
-    }
+
+
+    
     //    @IBAction func logOutPressed(_ sender: AnyObject) {
-        //
-        //        //TODO: Log out the user and send them back to WelcomeViewController
+    
         //        do {
         //            try Auth.auth().signOut()
         //        }

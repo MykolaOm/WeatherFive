@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,7 +20,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WeatherFive" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fls-XS-Oax" userLabel="background">
@@ -28,7 +28,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CLr-OK-EYr" userLabel="HH">
-                                <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
+                                <rect key="frame" x="0.0" y="389" width="375" height="389"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jxk-JM-CtD">
                                         <rect key="frame" x="0.0" y="43" width="375" height="248"/>
@@ -38,10 +38,10 @@
                                 <color key="backgroundColor" red="1" green="0.45821096010000001" blue="0.6821073017" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mRP-RL-opb" userLabel="LL">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="389"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vinnitsia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udl-jf-lze">
-                                        <rect key="frame" x="122" y="42" width="131" height="28"/>
+                                        <rect key="frame" x="122.33333333333331" y="42" width="131" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="131" id="BpA-iX-j65"/>
                                             <constraint firstAttribute="height" constant="28" id="Mw7-W0-7a3"/>
@@ -71,12 +71,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Bp6-kN-Ivd">
-                                        <rect key="frame" x="145" y="76" width="85" height="30"/>
+                                        <rect key="frame" x="145.33333333333334" y="76" width="85" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKI-fI-skC">
                                                 <rect key="frame" x="0.0" y="0.0" width="85" height="30"/>
                                                 <state key="normal" title="More details"/>
                                                 <connections>
+                                                    <action selector="detailButton:" destination="1OO-Zi-xgJ" eventType="touchUpInside" id="RAf-kH-oHU"/>
                                                     <segue destination="GAQ-F6-CAH" kind="presentation" identifier="sendDataForwards" id="0Kq-2l-Hqd"/>
                                                 </connections>
                                             </button>
@@ -96,10 +97,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iWg-7V-Yg7" userLabel="Middle">
-                                <rect key="frame" x="67.5" y="269.5" width="240" height="128"/>
+                                <rect key="frame" x="67.666666666666686" y="342" width="240" height="128"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter City Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3xy-n5-jnd">
-                                        <rect key="frame" x="29.5" y="48.5" width="180" height="30"/>
+                                        <rect key="frame" x="29.333333333333329" y="48.666666666666686" width="180" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="180" id="LUI-OR-gtF"/>
                                             <constraint firstAttribute="height" constant="30" id="SnZ-lq-tYC"/>
@@ -109,7 +110,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0C-LD-oOY">
-                                        <rect key="frame" x="76" y="86" width="87" height="30"/>
+                                        <rect key="frame" x="75.999999999999986" y="86" width="87.000000000000014" height="30"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="87" id="9p4-4M-Fwc"/>
@@ -159,6 +160,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="1OO-Zi-xgJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-101.59999999999999" y="113.79310344827587"/>
         </scene>
@@ -167,123 +169,178 @@
             <objects>
                 <viewController id="GAQ-F6-CAH" customClass="DetailViewController" customModule="WeatherFive" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="88c-7T-EZy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idG-zC-eKa" userLabel="LL">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="389"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60z-Yd-SYT">
-                                        <rect key="frame" x="0.0" y="167" width="375" height="166.5"/>
+                                        <rect key="frame" x="0.0" y="194.66666666666663" width="375" height="194.33333333333337"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WL-U4-FTX">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vinnitsia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WL-U4-FTX">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="194.66666666666666"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FI0-Di-PeZ">
-                                        <rect key="frame" x="0.0" y="167" width="375" height="167"/>
+                                        <rect key="frame" x="0.0" y="194.66666666666663" width="375" height="195"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YBh-G7-zbV">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                                 <subviews>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="days" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Go9-t0-vsx" userLabel="weekday1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="53.5" height="50"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Mon" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Go9-t0-vsx" userLabel="weekday1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="80"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="80" id="QdT-ry-NWg"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="days" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="d1Z-S6-eqX" userLabel="weekday2">
-                                                        <rect key="frame" x="53.5" y="0.0" width="53.5" height="50"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tue" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="d1Z-S6-eqX" userLabel="weekday2">
+                                                        <rect key="frame" x="53.666666666666657" y="0.0" width="53.333333333333343" height="80"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="80" id="JUs-rU-W1P"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="days" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oDv-Ua-R77" userLabel="weekday3">
-                                                        <rect key="frame" x="107" y="0.0" width="53.5" height="50"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Wed" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oDv-Ua-R77" userLabel="weekday3">
+                                                        <rect key="frame" x="107.00000000000001" y="0.0" width="53.666666666666671" height="80"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="80" id="el8-lZ-HsN"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="days" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2Yl-Jw-rpm" userLabel="weekday4">
-                                                        <rect key="frame" x="160.5" y="0.0" width="54" height="50"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Thu" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2Yl-Jw-rpm" userLabel="weekday4">
+                                                        <rect key="frame" x="160.66666666666666" y="0.0" width="53.666666666666657" height="80"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="80" id="dgv-92-Pt8"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="days" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lnD-0b-mK4" userLabel="weekday5">
-                                                        <rect key="frame" x="214.5" y="0.0" width="53.5" height="50"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Fri" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lnD-0b-mK4" userLabel="weekday5">
+                                                        <rect key="frame" x="214.33333333333334" y="0.0" width="53.666666666666657" height="80"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="80" id="YZo-4W-O6r"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="days" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VjQ-c1-DZL" userLabel="weekday6">
-                                                        <rect key="frame" x="268" y="0.0" width="53.5" height="50"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Sat" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VjQ-c1-DZL" userLabel="weekday6">
+                                                        <rect key="frame" x="268" y="0.0" width="53.333333333333314" height="80"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="80" id="0SA-P6-Sep"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="days" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nOC-yy-wAf" userLabel="weekday7">
-                                                        <rect key="frame" x="321.5" y="0.0" width="53.5" height="50"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Sun" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nOC-yy-wAf" userLabel="weekday7">
+                                                        <rect key="frame" x="321.33333333333331" y="0.0" width="53.666666666666686" height="80"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="80" id="VlV-vV-Fic"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="v13-0s-MIA"/>
+                                                    <constraint firstAttribute="bottom" secondItem="d1Z-S6-eqX" secondAttribute="bottom" id="0ne-xK-soA"/>
+                                                    <constraint firstItem="d1Z-S6-eqX" firstAttribute="leading" secondItem="Go9-t0-vsx" secondAttribute="trailing" id="12P-O8-LJo"/>
+                                                    <constraint firstItem="VjQ-c1-DZL" firstAttribute="leading" secondItem="lnD-0b-mK4" secondAttribute="trailing" id="7eU-Le-i52"/>
+                                                    <constraint firstItem="nOC-yy-wAf" firstAttribute="top" secondItem="YBh-G7-zbV" secondAttribute="top" id="8Cz-M1-rhI"/>
+                                                    <constraint firstItem="oDv-Ua-R77" firstAttribute="top" secondItem="YBh-G7-zbV" secondAttribute="top" id="AVx-iD-fKv"/>
+                                                    <constraint firstItem="VjQ-c1-DZL" firstAttribute="top" secondItem="YBh-G7-zbV" secondAttribute="top" id="BI3-dk-yu9"/>
+                                                    <constraint firstItem="lnD-0b-mK4" firstAttribute="leading" secondItem="2Yl-Jw-rpm" secondAttribute="trailing" id="C2M-OR-xYh"/>
+                                                    <constraint firstAttribute="bottom" secondItem="2Yl-Jw-rpm" secondAttribute="bottom" id="EFZ-YE-yYU"/>
+                                                    <constraint firstAttribute="bottom" secondItem="lnD-0b-mK4" secondAttribute="bottom" id="HfN-Jc-Ow8"/>
+                                                    <constraint firstAttribute="bottom" secondItem="nOC-yy-wAf" secondAttribute="bottom" id="J5H-LU-Bng"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Go9-t0-vsx" secondAttribute="bottom" id="KjI-7i-rQb"/>
+                                                    <constraint firstItem="Go9-t0-vsx" firstAttribute="leading" secondItem="YBh-G7-zbV" secondAttribute="leading" id="PNS-Lw-lwu"/>
+                                                    <constraint firstItem="Go9-t0-vsx" firstAttribute="top" secondItem="YBh-G7-zbV" secondAttribute="top" id="PfD-LI-ZtK"/>
+                                                    <constraint firstAttribute="height" constant="80" id="S52-jV-Hn9"/>
+                                                    <constraint firstItem="d1Z-S6-eqX" firstAttribute="top" secondItem="YBh-G7-zbV" secondAttribute="top" id="Sd6-Zq-mTf"/>
+                                                    <constraint firstAttribute="bottom" secondItem="VjQ-c1-DZL" secondAttribute="bottom" id="Sy3-ni-fko"/>
+                                                    <constraint firstItem="oDv-Ua-R77" firstAttribute="leading" secondItem="d1Z-S6-eqX" secondAttribute="trailing" id="XXd-X3-iN2"/>
+                                                    <constraint firstItem="lnD-0b-mK4" firstAttribute="top" secondItem="YBh-G7-zbV" secondAttribute="top" id="bD7-Ix-Fvx"/>
+                                                    <constraint firstItem="nOC-yy-wAf" firstAttribute="leading" secondItem="VjQ-c1-DZL" secondAttribute="trailing" id="hla-eO-mSP"/>
+                                                    <constraint firstAttribute="bottom" secondItem="oDv-Ua-R77" secondAttribute="bottom" id="i6H-dh-kXv"/>
+                                                    <constraint firstAttribute="trailing" secondItem="nOC-yy-wAf" secondAttribute="trailing" id="uE5-VW-3ew"/>
+                                                    <constraint firstItem="2Yl-Jw-rpm" firstAttribute="top" secondItem="YBh-G7-zbV" secondAttribute="top" id="xAD-h3-XjE"/>
+                                                    <constraint firstItem="2Yl-Jw-rpm" firstAttribute="leading" secondItem="oDv-Ua-R77" secondAttribute="trailing" id="xbS-E8-UEv"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="X2B-AU-gmP">
-                                                <rect key="frame" x="0.0" y="50" width="375" height="50"/>
+                                                <rect key="frame" x="0.0" y="80.000000000000028" width="375" height="50"/>
                                                 <subviews>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="temp" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dqB-DJ-xHM" userLabel="temperature1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="53.5" height="50"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dqB-DJ-xHM" userLabel="temperature1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="50"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="temp" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cZ6-HY-fye" userLabel="temperature2">
-                                                        <rect key="frame" x="53.5" y="0.0" width="53.5" height="50"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cZ6-HY-fye" userLabel="temperature2">
+                                                        <rect key="frame" x="53.666666666666657" y="0.0" width="53.333333333333343" height="50"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="temp" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="v6h-7m-qVa" userLabel="temperature3">
-                                                        <rect key="frame" x="107" y="0.0" width="53.5" height="50"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="v6h-7m-qVa" userLabel="temperature3">
+                                                        <rect key="frame" x="107.00000000000001" y="0.0" width="53.666666666666671" height="50"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="temp" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="G5U-fi-UTv" userLabel="temperature4">
-                                                        <rect key="frame" x="160.5" y="0.0" width="54" height="50"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="G5U-fi-UTv" userLabel="temperature4">
+                                                        <rect key="frame" x="160.66666666666666" y="0.0" width="53.666666666666657" height="50"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="temp" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dnl-AM-Pvt" userLabel="temperature5">
-                                                        <rect key="frame" x="214.5" y="0.0" width="53.5" height="50"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dnl-AM-Pvt" userLabel="temperature5">
+                                                        <rect key="frame" x="214.33333333333334" y="0.0" width="53.666666666666657" height="50"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="temp" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="f7y-Pm-t9s" userLabel="temperature6">
-                                                        <rect key="frame" x="268" y="0.0" width="53.5" height="50"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="f7y-Pm-t9s" userLabel="temperature6">
+                                                        <rect key="frame" x="268" y="0.0" width="53.333333333333314" height="50"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="temp" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0Lk-JW-TNo" userLabel="temperature7">
-                                                        <rect key="frame" x="321.5" y="0.0" width="53.5" height="50"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0Lk-JW-TNo" userLabel="temperature7">
+                                                        <rect key="frame" x="321.33333333333331" y="0.0" width="53.666666666666686" height="50"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="vvj-Ix-1br"/>
+                                                    <constraint firstAttribute="height" constant="50" id="U5W-wg-vqp"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="YBh-G7-zbV" firstAttribute="leading" secondItem="FI0-Di-PeZ" secondAttribute="leading" id="1rO-Cb-2az"/>
-                                            <constraint firstAttribute="trailing" secondItem="YBh-G7-zbV" secondAttribute="trailing" id="7lH-h0-Can"/>
-                                            <constraint firstItem="X2B-AU-gmP" firstAttribute="top" secondItem="YBh-G7-zbV" secondAttribute="bottom" id="8bb-ev-jVt"/>
-                                            <constraint firstAttribute="trailing" secondItem="X2B-AU-gmP" secondAttribute="trailing" id="Try-q2-XUH"/>
-                                            <constraint firstItem="YBh-G7-zbV" firstAttribute="top" secondItem="FI0-Di-PeZ" secondAttribute="top" id="ahk-t6-D4f"/>
-                                            <constraint firstItem="X2B-AU-gmP" firstAttribute="leading" secondItem="FI0-Di-PeZ" secondAttribute="leading" id="ncb-1P-7rM"/>
+                                            <constraint firstAttribute="trailing" secondItem="YBh-G7-zbV" secondAttribute="trailing" id="8rQ-0M-jKZ"/>
+                                            <constraint firstItem="YBh-G7-zbV" firstAttribute="top" secondItem="FI0-Di-PeZ" secondAttribute="top" id="IOv-SD-GbR"/>
+                                            <constraint firstItem="X2B-AU-gmP" firstAttribute="top" secondItem="YBh-G7-zbV" secondAttribute="bottom" id="Zcv-Ud-kSI"/>
+                                            <constraint firstAttribute="trailing" secondItem="X2B-AU-gmP" secondAttribute="trailing" id="fhU-4i-rzU"/>
+                                            <constraint firstItem="YBh-G7-zbV" firstAttribute="leading" secondItem="FI0-Di-PeZ" secondAttribute="leading" id="lDq-bG-f3j"/>
+                                            <constraint firstItem="X2B-AU-gmP" firstAttribute="leading" secondItem="FI0-Di-PeZ" secondAttribute="leading" id="oh3-BF-5bl"/>
+                                            <constraint firstItem="X2B-AU-gmP" firstAttribute="top" secondItem="YBh-G7-zbV" secondAttribute="bottom" id="u6N-ed-RlT"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZT0-49-Hlu">
+                                        <rect key="frame" x="8" y="68" width="77" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="77" id="2iG-wk-iUm"/>
+                                            <constraint firstAttribute="height" constant="30" id="dmQ-3a-iaZ"/>
+                                        </constraints>
+                                        <state key="normal" title="Show more"/>
+                                        <connections>
+                                            <action selector="changeDayAmountPressed:" destination="GAQ-F6-CAH" eventType="touchUpInside" id="muB-iu-OQj"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.54478970159999995" blue="0.38743755470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -294,9 +351,11 @@
                                     <constraint firstItem="0WL-U4-FTX" firstAttribute="top" secondItem="idG-zC-eKa" secondAttribute="top" id="E2E-zP-XQo"/>
                                     <constraint firstItem="60z-Yd-SYT" firstAttribute="height" secondItem="0WL-U4-FTX" secondAttribute="height" id="FiH-E5-txo"/>
                                     <constraint firstItem="60z-Yd-SYT" firstAttribute="top" secondItem="0WL-U4-FTX" secondAttribute="bottom" id="Ktj-A9-eUk"/>
+                                    <constraint firstItem="ZT0-49-Hlu" firstAttribute="leading" secondItem="idG-zC-eKa" secondAttribute="leading" constant="8" id="Phy-Ze-xi6"/>
                                     <constraint firstAttribute="trailing" secondItem="0WL-U4-FTX" secondAttribute="trailing" id="TCP-2g-DlS"/>
                                     <constraint firstItem="0WL-U4-FTX" firstAttribute="leading" secondItem="idG-zC-eKa" secondAttribute="leading" id="dHU-ce-not"/>
                                     <constraint firstItem="FI0-Di-PeZ" firstAttribute="top" secondItem="0WL-U4-FTX" secondAttribute="bottom" id="g6C-d3-tHv"/>
+                                    <constraint firstItem="ZT0-49-Hlu" firstAttribute="top" secondItem="idG-zC-eKa" secondAttribute="top" constant="68" id="hsF-RX-khe"/>
                                     <constraint firstItem="60z-Yd-SYT" firstAttribute="width" secondItem="0WL-U4-FTX" secondAttribute="width" id="jvO-Nc-yPS"/>
                                     <constraint firstAttribute="bottom" secondItem="FI0-Di-PeZ" secondAttribute="bottom" id="szg-hU-Wmf"/>
                                     <constraint firstAttribute="bottom" secondItem="60z-Yd-SYT" secondAttribute="bottom" id="tzl-0G-oHT"/>
@@ -304,10 +363,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gb7-MW-eiW" userLabel="HH">
-                                <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
+                                <rect key="frame" x="0.0" y="389" width="375" height="389"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDi-vJ-cdY">
-                                        <rect key="frame" x="137.5" y="136.5" width="100" height="60"/>
+                                        <rect key="frame" x="138" y="164.33333333333337" width="100" height="60"/>
                                         <color key="backgroundColor" red="0.076382540200000001" green="0.98774587560000005" blue="0.87960635939999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Iud-fh-LGr"/>
@@ -319,7 +378,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iqj-cf-naZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="187" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="187.33333333333334" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="kFo-ve-aq6"/>
                                         </constraints>
@@ -329,7 +388,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gj-tJ-N3a">
-                                        <rect key="frame" x="188" y="0.0" width="187" height="50"/>
+                                        <rect key="frame" x="188.33333333333337" y="0.0" width="186.66666666666663" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="keN-1K-YjZ"/>
                                         </constraints>
@@ -368,8 +427,22 @@
                         <viewLayoutGuide key="safeArea" id="Bqf-sq-1tv"/>
                     </view>
                     <connections>
+                        <outlet property="changeAmount" destination="ZT0-49-Hlu" id="tGF-nO-YJ9"/>
                         <outlet property="cityInfoLabel" destination="0WL-U4-FTX" id="kqU-nv-Plc"/>
-                        <outlet property="detailTextFildView" destination="Go9-t0-vsx" id="skR-yC-6VO"/>
+                        <outlet property="day1" destination="Go9-t0-vsx" id="BKl-TQ-FBu"/>
+                        <outlet property="day2" destination="d1Z-S6-eqX" id="yCF-Iy-1gO"/>
+                        <outlet property="day3" destination="oDv-Ua-R77" id="h6N-ER-OfV"/>
+                        <outlet property="day4" destination="2Yl-Jw-rpm" id="88D-pb-dPN"/>
+                        <outlet property="day5" destination="lnD-0b-mK4" id="kcU-fV-Ta2"/>
+                        <outlet property="day6" destination="VjQ-c1-DZL" id="K8G-xw-f8g"/>
+                        <outlet property="day7" destination="nOC-yy-wAf" id="oJl-jZ-Drz"/>
+                        <outlet property="temperature1" destination="dqB-DJ-xHM" id="73Q-qZ-0Yo"/>
+                        <outlet property="temperature2" destination="cZ6-HY-fye" id="XZi-IR-eUD"/>
+                        <outlet property="temperature3" destination="v6h-7m-qVa" id="VKS-5p-i90"/>
+                        <outlet property="temperature4" destination="G5U-fi-UTv" id="DIZ-kH-3ZG"/>
+                        <outlet property="temperature5" destination="dnl-AM-Pvt" id="58b-OE-jZA"/>
+                        <outlet property="temperature6" destination="f7y-Pm-t9s" id="dgS-pG-pYK"/>
+                        <outlet property="temperature7" destination="0Lk-JW-TNo" id="V7G-Mv-jmd"/>
                         <outlet property="weekWeatherLabel" destination="60z-Yd-SYT" id="qWS-M6-daF"/>
                     </connections>
                 </viewController>
