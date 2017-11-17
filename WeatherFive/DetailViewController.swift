@@ -19,6 +19,7 @@ class DetailViewController: UIViewController {
     var arrayOfDate : [String] = []
     var arrayOfWeekDays : [String] = []
     let separator : String = "\n"
+    let celsius = "°"
     
     @IBOutlet weak var cityInfoLabel: UILabel!
     @IBOutlet weak var weekWeatherLabel: UILabel!
@@ -65,13 +66,13 @@ class DetailViewController: UIViewController {
             day6.text = arrayOfDate[5] + separator + arrayOfWeekDays[5]
             day7.text = arrayOfDate[6] + separator + arrayOfWeekDays[6]
        
-            temperature1.text = morningTemperature[0] + separator + nightTemperature[0]
-            temperature2.text = morningTemperature[1] + separator + nightTemperature[1]
-            temperature3.text = morningTemperature[2] + separator + nightTemperature[2]
-            temperature4.text = morningTemperature[3] + separator + nightTemperature[3]
-            temperature5.text = morningTemperature[4] + separator + nightTemperature[4]
-            temperature6.text = morningTemperature[5] + separator + nightTemperature[5]
-            temperature7.text = morningTemperature[6] + separator + nightTemperature[6]
+            temperature1.text = morningTemperature[0] + celsius + separator + nightTemperature[0] + celsius
+            temperature2.text = morningTemperature[1] + celsius + separator + nightTemperature[1] + celsius
+            temperature3.text = morningTemperature[2] + celsius + separator + nightTemperature[2] + celsius
+            temperature4.text = morningTemperature[3] + celsius + separator + nightTemperature[3] + celsius
+            temperature5.text = morningTemperature[4] + celsius + separator + nightTemperature[4] + celsius
+            temperature6.text = morningTemperature[5] + celsius + separator + nightTemperature[5] + celsius
+            temperature7.text = morningTemperature[6] + celsius + separator + nightTemperature[6] + celsius
         }
     }
     

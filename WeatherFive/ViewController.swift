@@ -21,6 +21,7 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
     var cityDescription : String = "Ukraine"
     var currentCity : String = "Vinnitsia"
     var retrievedCities  : [String] = []
+    let celsius = "°"
     
     @IBOutlet weak var firstNightLabel: UILabel!
     @IBOutlet weak var firstDayLabel: UILabel!
@@ -75,8 +76,8 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
     func updateLabel(){
         cityLabel.text = currentCity
         
-       firstDayLabel.text = morningTemperature[0]
-       firstNightLabel.text = nightTemperature[0]
+       firstDayLabel.text = morningTemperature[0] + celsius
+       firstNightLabel.text = nightTemperature[0] + celsius
     }
     
     override func viewDidLoad() {
