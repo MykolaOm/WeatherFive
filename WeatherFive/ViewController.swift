@@ -20,15 +20,15 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
     var arrayOfWeekDays : [String] = []
     var cityDescription : String = "Ukraine"
     var currentCity : String = "Vinnitsia"
-    var weekDays = "Mon Tue Wed Thu Fri Sat Sun"
-    var weatherForWeek = ""
+//    var weekDays = "Mon Tue Wed Thu Fri Sat Sun"
+//    var weatherForWeek = ""
     var retrievedCities  : [String] = []
     
     @IBOutlet weak var firstNightLabel: UILabel!
     @IBOutlet weak var firstDayLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var changeCityTextField: UITextField!
-     @IBOutlet weak var cityPicker: UIPickerView!
+    @IBOutlet weak var cityPicker: UIPickerView!
     
     
     let firstUrlPart = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text=%27"
@@ -48,7 +48,6 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
             currentCity = changeCityTextField.text!
             WEATHER_URL = firstUrlPart + currentCity + lastUrlPart
             getWeatherData(url: WEATHER_URL)
-//            updateLabel()
         }
     }
     
@@ -77,24 +76,18 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
     
     func updateLabel(){
         cityLabel.text = currentCity
-        print("updating LABEL!!!!!")
+        
        firstDayLabel.text = morningTemperature[0]
        firstNightLabel.text = nightTemperature[0]
-        
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-       
+    
         cityPicker.delegate = self
         cityPicker.dataSource = self
-        
-
     }
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -142,11 +135,8 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
             arrayOfDate.removeAll()
             arrayOfWeekDays.removeAll()
             morningTemperature.removeAll()
-            
-            //print(json["query"]["results"]["channel"]["location"]["city"].stringValue)
+
             cityDescription = json["query"]["results"]["channel"]["location"]["country"].stringValue
-            print(cityDescription)
-            print("that was country!")
             for item in 0..<countIndex {
                 let farenhLow = json["query"]["results"]["channel"]["item"]["forecast"][item]["low"].stringValue
                 let farenhHigh = json["query"]["results"]["channel"]["item"]["forecast"][item]["high"].stringValue
@@ -171,13 +161,9 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
     
     // MARK: DB OPERATIONS
     /***************************************************************/
-
-    
-    // MARK --- observe dara from db firebase
-    //*--------------------------------------------------------*//
     
     func retrieveCities(){
-        
+      
         loginDB()
         let cityDB = Database.database().reference().child("city")
         var groupCity = [String]()
@@ -187,6 +173,9 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
             for item in snapshot.children{
                 groupCity.append((item as AnyObject).key)
             }
+            self.userCitiesArray.removeAll()
+            self.userCitiesArray.append("Vinnitsia")
+            self.userCitiesArray.append("Kyiv")
             for city in groupCity {
                 if self.retrievedCities.contains(city){
                     print("city already exist")
@@ -197,9 +186,6 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
                     print("city added")
                 }
             }
-            self.userCitiesArray.removeAll()
-            self.userCitiesArray.append("Vinnitsia")
-            self.userCitiesArray.append("Kyiv")
             self.userCitiesArray += self.retrievedCities
             print(self.userCitiesArray)
             print("in retriev1")
@@ -224,8 +210,8 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
 
     }
     
-    
-      //---------------------------
+    // MARK : Transfering data to second view
+    //*************************************
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "sendDataForwards"{
@@ -241,29 +227,6 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
         }
     }
     
-
-
-    
-    //    @IBAction func logOutPressed(_ sender: AnyObject) {
-    
-        //        do {
-        //            try Auth.auth().signOut()
-        //        }
-        //        catch{
-        //            print("problem with logout")
-        //        }
-        //        guard (navigationController?.popToRootViewController(animated: true) != nil)
-        //            else{
-        //                print("No View Controllers to pop off")
-        //                return
-        //        }
-        //
-        //    }
-        
-        //---------------------------
-        
-        //
-    
-    
+  //LAST ROW IN CONTROLLER
 }
 

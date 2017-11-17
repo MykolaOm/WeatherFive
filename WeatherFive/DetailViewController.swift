@@ -125,6 +125,7 @@ class DetailViewController: UIViewController {
         
         if day4.isHidden == true {
             changeAmount.setTitle("Show less", for: .normal)
+            
             day4.isHidden = false
             day5.isHidden = false
             day6.isHidden = false
@@ -135,7 +136,8 @@ class DetailViewController: UIViewController {
             temperature7.isHidden = false
         }
         else{
-             changeAmount.setTitle("Show more", for: .normal)
+            changeAmount.setTitle("Show more", for: .normal)
+            
             day4.isHidden = true
             day5.isHidden = true
             day6.isHidden = true
@@ -146,5 +148,5 @@ class DetailViewController: UIViewController {
             temperature7.isHidden = true
         }
     }
-    
+    //LAST ROW IN CONTROLLER
 }
