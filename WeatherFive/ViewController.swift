@@ -142,6 +142,7 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
                 morningTemperature.append(temperatureConverter(temperature: farenhHigh))
                 arrayOfWeekDays.append(json["query"]["results"]["channel"]["item"]["forecast"][item]["day"].stringValue)
                 arrayOfDate.append(json["query"]["results"]["channel"]["item"]["forecast"][item]["date"].stringValue)
+                arrayOfDate[item] = String(arrayOfDate[item].dropLast(4))
             }
             print("in JSON succes!")
         }
