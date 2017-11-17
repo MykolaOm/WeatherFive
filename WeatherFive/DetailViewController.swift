@@ -95,7 +95,6 @@ class DetailViewController: UIViewController {
         loginDB()
         let cityDB = Database.database().reference().child("city")
         cityDB.child(currentCity).setValue(["country":cityDescription])
-        print("valueok")
     }
     
     func removeCity() {
@@ -103,10 +102,10 @@ class DetailViewController: UIViewController {
         loginDB()
         let cityDB = Database.database().reference().child("city")
         cityDB.child(currentCity).removeValue()
-        print("valueok")
     }
     
     func loginDB() {
+        
         let emailFB = "test@gmail.com"
         let passwordFB = "123456"
         

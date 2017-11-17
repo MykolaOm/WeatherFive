@@ -20,8 +20,6 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
     var arrayOfWeekDays : [String] = []
     var cityDescription : String = "Ukraine"
     var currentCity : String = "Vinnitsia"
-//    var weekDays = "Mon Tue Wed Thu Fri Sat Sun"
-//    var weatherForWeek = ""
     var retrievedCities  : [String] = []
     
     @IBOutlet weak var firstNightLabel: UILabel!
@@ -127,7 +125,6 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
         print("in JSON entered")
         if let checkCity = json["query"]["results"]["channel"]["location"]["city"].string {
             let countIndex: Int = 7
-            print(checkCity)
             currentCity = checkCity
             
             //clear arrys before fill
@@ -183,12 +180,10 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
                 }
                 else{
                     self.retrievedCities.append(city)
-                    print("city added")
                 }
             }
             self.userCitiesArray += self.retrievedCities
-            print(self.userCitiesArray)
-            print("in retriev1")
+           
         })
        
     }
