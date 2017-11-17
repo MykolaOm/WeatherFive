@@ -19,17 +19,18 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
     var arrayOfDate : [String] = []
     var arrayOfWeekDays : [String] = []
     var CityDescription : [String] = []
-    var currentCity : String = "vinnitsia"
+    var currentCity : String = "Vinnitsia"
     
     @IBOutlet weak var firstNightLabel: UILabel!
     @IBOutlet weak var firstDayLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
-    
-    
+    @IBOutlet weak var changeCityTextField: UITextField!
+     @IBOutlet weak var cityPicker: UIPickerView!
     
     
     let firstUrlPart = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text=%27"
-    var city : [String] = ["vinnitsia","kyiv"]
+
+    var city : [String] = ["Vinnitsia","Kyiv"]
    
     let lastUrlPart = "%27)&format=json&%22"
     
@@ -37,20 +38,15 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
     
     var WEATHER_URL = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text=%27vinnitsia%27)&format=json&%22"
     
-    @IBOutlet weak var cityPicker: UIPickerView!
-    
-    
-    @IBAction func buttonTaped(_ sender: UIButton) {
-        
-        print("button taped")
-        getWeatherData(url: WEATHER_URL)
-       
-    }
-    
-    @IBAction func tapToRetrive(_ sender: UIButton) {
-        addCity()
-        retrieveCities()
-        
+   
+    @IBAction func getWeatherPressed(_ sender: UIButton) {
+        if changeCityTextField != nil {
+            
+            currentCity = changeCityTextField.text!
+            WEATHER_URL = firstUrlPart + currentCity + lastUrlPart
+            getWeatherData(url: WEATHER_URL)
+//            updateLabel()
+        }
     }
     
     // MARK: UIPickerView func
@@ -67,11 +63,13 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
         return userCitiesArray[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
         print(userCitiesArray[row])
+        
         WEATHER_URL = firstUrlPart + userCitiesArray[row] + lastUrlPart
         getWeatherData(url: WEATHER_URL)
-      //  updateWeatherData(json: weather)
-      //  updateLabel()
+//        retrieveCities()
+        pickerView.reloadAllComponents()
     }
     
     func updateLabel(){
@@ -79,6 +77,8 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
         print("updating LABEL!!!!!")
        firstDayLabel.text = morningTemperature[0]
        firstNightLabel.text = nightTemperature[0]
+        
+        
     }
     
     override func viewDidLoad() {
@@ -87,8 +87,12 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
        
         cityPicker.delegate = self
         cityPicker.dataSource = self
-    }
+        
 
+    }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -106,7 +110,7 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
                 
                 let weatherJSON : JSON = JSON(response.result.value!)
                 
-                print(weatherJSON)
+                //print(weatherJSON)
                 print("in alamofire succes!")
                 
                 self.updateWeatherData(json : weatherJSON)
@@ -141,8 +145,6 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
             for item in 0..<countIndex {
                 let farenhLow = json["query"]["results"]["channel"]["item"]["forecast"][item]["low"].stringValue
                 let farenhHigh = json["query"]["results"]["channel"]["item"]["forecast"][item]["high"].stringValue
-//                print(farenhLow, farenhHigh)
-//                print(temperatureConverter(temperature: farenhLow),temperatureConverter(temperature: farenhHigh))
                 nightTemperature.append(temperatureConverter(temperature: farenhLow))
                 morningTemperature.append(temperatureConverter(temperature: farenhHigh))
                 arrayOfWeekDays.append(json["query"]["results"]["channel"]["item"]["forecast"][item]["day"].stringValue)
@@ -187,11 +189,16 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
                 groupCity.append((item as AnyObject).key)
             }
             for city in groupCity {
-                self.userCitiesArray.append(city)
+                if self.userCitiesArray.contains(city){
+                    continue
+                }
+                else{
+                    self.userCitiesArray.append(city)
+                }
             }
  
         })
-
+        print(userCitiesArray)
     }
     
     //---------------------------

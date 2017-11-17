@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17818BAE1FBE72CE001272F1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17818BAD1FBE72CE001272F1 /* DetailViewController.swift */; };
 		1792C23F1FBB31E00017A167 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1792C23E1FBB31E00017A167 /* GoogleService-Info.plist */; };
 		17B517791FBB0DB700BB4DC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B517781FBB0DB700BB4DC0 /* AppDelegate.swift */; };
 		17B5177B1FBB0DB700BB4DC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B5177A1FBB0DB700BB4DC0 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17818BAD1FBE72CE001272F1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		1792C23E1FBB31E00017A167 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		17B517751FBB0DB600BB4DC0 /* WeatherFive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherFive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17B517781FBB0DB700BB4DC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			children = (
 				17B517781FBB0DB700BB4DC0 /* AppDelegate.swift */,
 				17B5177A1FBB0DB700BB4DC0 /* ViewController.swift */,
+				17818BAD1FBE72CE001272F1 /* DetailViewController.swift */,
 				17B5177C1FBB0DB700BB4DC0 /* Main.storyboard */,
 				17B5177F1FBB0DB700BB4DC0 /* Assets.xcassets */,
 				17B517811FBB0DB700BB4DC0 /* LaunchScreen.storyboard */,
@@ -231,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17818BAE1FBE72CE001272F1 /* DetailViewController.swift in Sources */,
 				17B5177B1FBB0DB700BB4DC0 /* ViewController.swift in Sources */,
 				17B517791FBB0DB700BB4DC0 /* AppDelegate.swift in Sources */,
 			);
