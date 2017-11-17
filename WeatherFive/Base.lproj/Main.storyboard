@@ -77,7 +77,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="85" height="30"/>
                                                 <state key="normal" title="More details"/>
                                                 <connections>
-                                                    <segue destination="GAQ-F6-CAH" kind="presentation" id="0Kq-2l-Hqd"/>
+                                                    <segue destination="GAQ-F6-CAH" kind="presentation" identifier="sendDataForwards" id="0Kq-2l-Hqd"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -173,31 +173,134 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idG-zC-eKa" userLabel="LL">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60z-Yd-SYT">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60z-Yd-SYT">
                                         <rect key="frame" x="0.0" y="167" width="375" height="166.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WL-U4-FTX">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WL-U4-FTX">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FI0-Di-PeZ">
+                                        <rect key="frame" x="0.0" y="167" width="375" height="167"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YBh-G7-zbV">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                                <subviews>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="days" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Go9-t0-vsx" userLabel="weekday1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="53.5" height="50"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="days" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="d1Z-S6-eqX" userLabel="weekday2">
+                                                        <rect key="frame" x="53.5" y="0.0" width="53.5" height="50"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="days" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oDv-Ua-R77" userLabel="weekday3">
+                                                        <rect key="frame" x="107" y="0.0" width="53.5" height="50"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="days" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2Yl-Jw-rpm" userLabel="weekday4">
+                                                        <rect key="frame" x="160.5" y="0.0" width="54" height="50"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="days" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lnD-0b-mK4" userLabel="weekday5">
+                                                        <rect key="frame" x="214.5" y="0.0" width="53.5" height="50"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="days" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VjQ-c1-DZL" userLabel="weekday6">
+                                                        <rect key="frame" x="268" y="0.0" width="53.5" height="50"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="days" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nOC-yy-wAf" userLabel="weekday7">
+                                                        <rect key="frame" x="321.5" y="0.0" width="53.5" height="50"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="v13-0s-MIA"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="X2B-AU-gmP">
+                                                <rect key="frame" x="0.0" y="50" width="375" height="50"/>
+                                                <subviews>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="temp" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dqB-DJ-xHM" userLabel="temperature1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="53.5" height="50"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="temp" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cZ6-HY-fye" userLabel="temperature2">
+                                                        <rect key="frame" x="53.5" y="0.0" width="53.5" height="50"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="temp" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="v6h-7m-qVa" userLabel="temperature3">
+                                                        <rect key="frame" x="107" y="0.0" width="53.5" height="50"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="temp" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="G5U-fi-UTv" userLabel="temperature4">
+                                                        <rect key="frame" x="160.5" y="0.0" width="54" height="50"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="temp" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dnl-AM-Pvt" userLabel="temperature5">
+                                                        <rect key="frame" x="214.5" y="0.0" width="53.5" height="50"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="temp" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="f7y-Pm-t9s" userLabel="temperature6">
+                                                        <rect key="frame" x="268" y="0.0" width="53.5" height="50"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="temp" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0Lk-JW-TNo" userLabel="temperature7">
+                                                        <rect key="frame" x="321.5" y="0.0" width="53.5" height="50"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="vvj-Ix-1br"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="YBh-G7-zbV" firstAttribute="leading" secondItem="FI0-Di-PeZ" secondAttribute="leading" id="1rO-Cb-2az"/>
+                                            <constraint firstAttribute="trailing" secondItem="YBh-G7-zbV" secondAttribute="trailing" id="7lH-h0-Can"/>
+                                            <constraint firstItem="X2B-AU-gmP" firstAttribute="top" secondItem="YBh-G7-zbV" secondAttribute="bottom" id="8bb-ev-jVt"/>
+                                            <constraint firstAttribute="trailing" secondItem="X2B-AU-gmP" secondAttribute="trailing" id="Try-q2-XUH"/>
+                                            <constraint firstItem="YBh-G7-zbV" firstAttribute="top" secondItem="FI0-Di-PeZ" secondAttribute="top" id="ahk-t6-D4f"/>
+                                            <constraint firstItem="X2B-AU-gmP" firstAttribute="leading" secondItem="FI0-Di-PeZ" secondAttribute="leading" id="ncb-1P-7rM"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.54478970159999995" blue="0.38743755470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="60z-Yd-SYT" firstAttribute="leading" secondItem="idG-zC-eKa" secondAttribute="leading" id="61z-Pu-Dc4"/>
                                     <constraint firstItem="60z-Yd-SYT" firstAttribute="top" secondItem="0WL-U4-FTX" secondAttribute="bottom" id="69a-UL-Tmc"/>
                                     <constraint firstAttribute="trailing" secondItem="60z-Yd-SYT" secondAttribute="trailing" id="AqZ-eE-M3U"/>
+                                    <constraint firstItem="FI0-Di-PeZ" firstAttribute="leading" secondItem="idG-zC-eKa" secondAttribute="leading" id="BUB-P6-Kec"/>
                                     <constraint firstItem="0WL-U4-FTX" firstAttribute="top" secondItem="idG-zC-eKa" secondAttribute="top" id="E2E-zP-XQo"/>
                                     <constraint firstItem="60z-Yd-SYT" firstAttribute="height" secondItem="0WL-U4-FTX" secondAttribute="height" id="FiH-E5-txo"/>
                                     <constraint firstItem="60z-Yd-SYT" firstAttribute="top" secondItem="0WL-U4-FTX" secondAttribute="bottom" id="Ktj-A9-eUk"/>
                                     <constraint firstAttribute="trailing" secondItem="0WL-U4-FTX" secondAttribute="trailing" id="TCP-2g-DlS"/>
                                     <constraint firstItem="0WL-U4-FTX" firstAttribute="leading" secondItem="idG-zC-eKa" secondAttribute="leading" id="dHU-ce-not"/>
+                                    <constraint firstItem="FI0-Di-PeZ" firstAttribute="top" secondItem="0WL-U4-FTX" secondAttribute="bottom" id="g6C-d3-tHv"/>
                                     <constraint firstItem="60z-Yd-SYT" firstAttribute="width" secondItem="0WL-U4-FTX" secondAttribute="width" id="jvO-Nc-yPS"/>
+                                    <constraint firstAttribute="bottom" secondItem="FI0-Di-PeZ" secondAttribute="bottom" id="szg-hU-Wmf"/>
                                     <constraint firstAttribute="bottom" secondItem="60z-Yd-SYT" secondAttribute="bottom" id="tzl-0G-oHT"/>
+                                    <constraint firstAttribute="trailing" secondItem="FI0-Di-PeZ" secondAttribute="trailing" id="yRO-lJ-oHX"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gb7-MW-eiW" userLabel="HH">
@@ -215,11 +318,38 @@
                                             <action selector="backButtonPressed:" destination="GAQ-F6-CAH" eventType="touchUpInside" id="3MB-Gv-uEm"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iqj-cf-naZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="kFo-ve-aq6"/>
+                                        </constraints>
+                                        <state key="normal" title="Add"/>
+                                        <connections>
+                                            <action selector="addCityButtonPressed:" destination="GAQ-F6-CAH" eventType="touchUpInside" id="aPR-nN-RuI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gj-tJ-N3a">
+                                        <rect key="frame" x="188" y="0.0" width="187" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="keN-1K-YjZ"/>
+                                        </constraints>
+                                        <state key="normal" title="Remove"/>
+                                        <connections>
+                                            <action selector="removeCityButonPressed:" destination="GAQ-F6-CAH" eventType="touchUpInside" id="tRm-pE-vAD"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.45821096010000001" blue="0.6821073017" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="6gj-tJ-N3a" firstAttribute="leading" secondItem="Iqj-cf-naZ" secondAttribute="trailing" constant="1" id="HxV-eq-scF"/>
+                                    <constraint firstItem="6gj-tJ-N3a" firstAttribute="width" secondItem="Iqj-cf-naZ" secondAttribute="width" id="KL6-Yz-caC"/>
                                     <constraint firstItem="vDi-vJ-cdY" firstAttribute="centerX" secondItem="gb7-MW-eiW" secondAttribute="centerX" id="UCg-r7-00O"/>
+                                    <constraint firstAttribute="trailing" secondItem="6gj-tJ-N3a" secondAttribute="trailing" id="UVP-RQ-z5c"/>
+                                    <constraint firstItem="6gj-tJ-N3a" firstAttribute="leading" secondItem="Iqj-cf-naZ" secondAttribute="trailing" constant="1" id="lrr-no-lsq"/>
                                     <constraint firstItem="vDi-vJ-cdY" firstAttribute="centerY" secondItem="gb7-MW-eiW" secondAttribute="centerY" id="sp2-VF-Za6"/>
+                                    <constraint firstItem="Iqj-cf-naZ" firstAttribute="top" secondItem="gb7-MW-eiW" secondAttribute="top" id="ueD-BU-bT3"/>
+                                    <constraint firstItem="6gj-tJ-N3a" firstAttribute="top" secondItem="gb7-MW-eiW" secondAttribute="top" id="x1h-1b-dPX"/>
+                                    <constraint firstItem="Iqj-cf-naZ" firstAttribute="leading" secondItem="gb7-MW-eiW" secondAttribute="leading" id="xNJ-lN-CXr"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -237,6 +367,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bqf-sq-1tv"/>
                     </view>
+                    <connections>
+                        <outlet property="cityInfoLabel" destination="0WL-U4-FTX" id="kqU-nv-Plc"/>
+                        <outlet property="detailTextFildView" destination="Go9-t0-vsx" id="skR-yC-6VO"/>
+                        <outlet property="weekWeatherLabel" destination="60z-Yd-SYT" id="qWS-M6-daF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bfy-j7-exm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

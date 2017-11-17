@@ -18,8 +18,10 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
     var nightTemperature : [String] = []
     var arrayOfDate : [String] = []
     var arrayOfWeekDays : [String] = []
-    var CityDescription : [String] = []
+    var cityDescription : String = "Ukraine"
     var currentCity : String = "Vinnitsia"
+    var weekDays = "Mon Tue Wed Thu Fri Sat Sun"
+    var weatherForWeek = ""
     
     @IBOutlet weak var firstNightLabel: UILabel!
     @IBOutlet weak var firstDayLabel: UILabel!
@@ -141,7 +143,9 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
             morningTemperature.removeAll()
             
             //print(json["query"]["results"]["channel"]["location"]["city"].stringValue)
-            print(json["query"]["results"]["channel"]["location"]["country"].stringValue)
+            cityDescription = json["query"]["results"]["channel"]["location"]["country"].stringValue
+            print(cityDescription)
+            print("that was country!")
             for item in 0..<countIndex {
                 let farenhLow = json["query"]["results"]["channel"]["item"]["forecast"][item]["low"].stringValue
                 let farenhHigh = json["query"]["results"]["channel"]["item"]["forecast"][item]["high"].stringValue
@@ -149,13 +153,17 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
                 morningTemperature.append(temperatureConverter(temperature: farenhHigh))
                 arrayOfWeekDays.append(json["query"]["results"]["channel"]["item"]["forecast"][item]["day"].stringValue)
                 arrayOfDate.append(json["query"]["results"]["channel"]["item"]["forecast"][item]["date"].stringValue)
-
             }
             print("in JSON succes!")
         }
         else {
             print( "Weather Unavailable")
         }
+        weekDays = ""
+        for day in arrayOfWeekDays{
+            weekDays += "\(day) "
+        }
+        concateTemperatures()
         updateLabel()
     }
     // MARK: CONVERTER
@@ -220,8 +228,28 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
     
     
       //---------------------------
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "sendDataForwards"{
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.cityInfodata = "\(currentCity), \(cityDescription)"
+            detailViewController.weatherForWeek = weatherForWeek
+            detailViewController.weekDays = weekDays
+            
+        }
+    }
     
-    
+    func concateTemperatures(){
+        weatherForWeek = ""
+        for item in morningTemperature{
+            weatherForWeek += item
+            weatherForWeek += " "
+        }
+        weatherForWeek += "\n"
+        for item in nightTemperature{
+            weatherForWeek += item
+            weatherForWeek += " "
+        }
+    }
     //    @IBAction func logOutPressed(_ sender: AnyObject) {
         //
         //        //TODO: Log out the user and send them back to WelcomeViewController
