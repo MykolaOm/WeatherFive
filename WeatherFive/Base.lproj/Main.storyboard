@@ -425,21 +425,21 @@
                     <connections>
                         <outlet property="changeAmount" destination="ZT0-49-Hlu" id="tGF-nO-YJ9"/>
                         <outlet property="cityInfoLabel" destination="0WL-U4-FTX" id="kqU-nv-Plc"/>
-                        <outlet property="day1" destination="Go9-t0-vsx" id="BKl-TQ-FBu"/>
-                        <outlet property="day2" destination="d1Z-S6-eqX" id="yCF-Iy-1gO"/>
-                        <outlet property="day3" destination="oDv-Ua-R77" id="h6N-ER-OfV"/>
-                        <outlet property="day4" destination="2Yl-Jw-rpm" id="88D-pb-dPN"/>
-                        <outlet property="day5" destination="lnD-0b-mK4" id="kcU-fV-Ta2"/>
-                        <outlet property="day6" destination="VjQ-c1-DZL" id="K8G-xw-f8g"/>
-                        <outlet property="day7" destination="nOC-yy-wAf" id="oJl-jZ-Drz"/>
-                        <outlet property="temperature1" destination="dqB-DJ-xHM" id="73Q-qZ-0Yo"/>
-                        <outlet property="temperature2" destination="cZ6-HY-fye" id="XZi-IR-eUD"/>
-                        <outlet property="temperature3" destination="v6h-7m-qVa" id="VKS-5p-i90"/>
-                        <outlet property="temperature4" destination="G5U-fi-UTv" id="DIZ-kH-3ZG"/>
-                        <outlet property="temperature5" destination="dnl-AM-Pvt" id="58b-OE-jZA"/>
-                        <outlet property="temperature6" destination="f7y-Pm-t9s" id="dgS-pG-pYK"/>
-                        <outlet property="temperature7" destination="0Lk-JW-TNo" id="V7G-Mv-jmd"/>
                         <outlet property="weekWeatherLabel" destination="60z-Yd-SYT" id="qWS-M6-daF"/>
+                        <outletCollection property="collection" destination="Go9-t0-vsx" collectionClass="NSMutableArray" id="C8d-BT-H7F"/>
+                        <outletCollection property="collection" destination="d1Z-S6-eqX" collectionClass="NSMutableArray" id="u2s-69-QAe"/>
+                        <outletCollection property="collection" destination="oDv-Ua-R77" collectionClass="NSMutableArray" id="pG1-o7-C7f"/>
+                        <outletCollection property="collection" destination="2Yl-Jw-rpm" collectionClass="NSMutableArray" id="HEN-g0-pEW"/>
+                        <outletCollection property="collection" destination="lnD-0b-mK4" collectionClass="NSMutableArray" id="MAE-HV-XAg"/>
+                        <outletCollection property="collection" destination="VjQ-c1-DZL" collectionClass="NSMutableArray" id="YWP-hj-FLP"/>
+                        <outletCollection property="collection" destination="nOC-yy-wAf" collectionClass="NSMutableArray" id="XmT-vj-rFJ"/>
+                        <outletCollection property="collectionofDateTextViews" destination="dqB-DJ-xHM" collectionClass="NSMutableArray" id="sFx-Jy-xpl"/>
+                        <outletCollection property="collectionofDateTextViews" destination="cZ6-HY-fye" collectionClass="NSMutableArray" id="ZYv-R9-BrV"/>
+                        <outletCollection property="collectionofDateTextViews" destination="v6h-7m-qVa" collectionClass="NSMutableArray" id="Yhn-BW-HB7"/>
+                        <outletCollection property="collectionofDateTextViews" destination="G5U-fi-UTv" collectionClass="NSMutableArray" id="BJE-HK-mfg"/>
+                        <outletCollection property="collectionofDateTextViews" destination="dnl-AM-Pvt" collectionClass="NSMutableArray" id="v5q-gA-x60"/>
+                        <outletCollection property="collectionofDateTextViews" destination="f7y-Pm-t9s" collectionClass="NSMutableArray" id="Gjb-Z4-Ksi"/>
+                        <outletCollection property="collectionofDateTextViews" destination="0Lk-JW-TNo" collectionClass="NSMutableArray" id="3nb-E5-tF1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bfy-j7-exm" userLabel="First Responder" sceneMemberID="firstResponder"/>
