@@ -11,13 +11,8 @@ import Firebase
 
 class DetailViewController: UIViewController {
 
-    var cityDescription = ""
-    var currentCity = ""
+    var weatherDataModel = WeatherDataModel()
     var cityInfodata = ""
-    var morningTemperature : [String] = []
-    var nightTemperature : [String] = []
-    var arrayOfDate : [String] = []
-    var arrayOfWeekDays : [String] = []
     let separator : String = "\n"
     let celsius = "°"
     
@@ -41,10 +36,10 @@ class DetailViewController: UIViewController {
         }
 
       
-           if  arrayOfWeekDays.count > 0 {
+           if  weatherDataModel.arrayOfWeekDays.count > 0 {
             for item in 0..<7{
-            collection[item].text = arrayOfDate[item] + separator + arrayOfWeekDays[item]
-           collectionofDateTextViews[item].text = morningTemperature[item] + celsius + separator + nightTemperature[item] + celsius
+            collection[item].text = weatherDataModel.arrayOfDate[item] + separator + weatherDataModel.arrayOfWeekDays[item]
+           collectionofDateTextViews[item].text = weatherDataModel.morningTemperature[item] + celsius + separator + weatherDataModel.nightTemperature[item] + celsius
             }
 
         }
@@ -69,14 +64,14 @@ class DetailViewController: UIViewController {
         
         loginDB()
         let cityDB = Database.database().reference().child("city")
-        cityDB.child(currentCity).setValue(["country":cityDescription])
+        cityDB.child(weatherDataModel.currentCity).setValue(["country":weatherDataModel.cityDescription])
     }
     
     func removeCity() {
         
         loginDB()
         let cityDB = Database.database().reference().child("city")
-        cityDB.child(currentCity).removeValue()
+        cityDB.child(weatherDataModel.currentCity).removeValue()
     }
     
     func loginDB() {

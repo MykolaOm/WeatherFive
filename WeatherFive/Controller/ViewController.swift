@@ -13,13 +13,7 @@ import Firebase
 
 class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
 
-    var userCitiesArray : [String] = ["Vinnitsia","Kyiv"]
-    var morningTemperature : [String] = []
-    var nightTemperature : [String] = []
-    var arrayOfDate : [String] = []
-    var arrayOfWeekDays : [String] = []
-    var cityDescription : String = "Ukraine"
-    var currentCity : String = "Vinnitsia"
+    let weatherDataModel = WeatherDataModel()
     var retrievedCities  : [String] = []
     let celsius = "°"
     
@@ -36,7 +30,6 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
    
     let lastUrlPart = "%27)&format=json&%22"
     
-    //lazy var WEATHER_URL = "\(firstUrlPart)\(city[0])\(lastUrlPart)"
     
     var WEATHER_URL = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text=%27vinnitsia%27)&format=json&%22"
     
@@ -44,8 +37,8 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
     @IBAction func getWeatherPressed(_ sender: UIButton) {
         if changeCityTextField != nil {
             
-            currentCity = changeCityTextField.text!
-            WEATHER_URL = firstUrlPart + currentCity + lastUrlPart
+            weatherDataModel.currentCity = changeCityTextField.text!
+            WEATHER_URL = firstUrlPart + weatherDataModel.currentCity + lastUrlPart
             getWeatherData(url: WEATHER_URL)
         }
     }
@@ -57,27 +50,27 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-      return userCitiesArray.count
+      return weatherDataModel.userCitiesArray.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return userCitiesArray[row]
+        return weatherDataModel.userCitiesArray[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        print(userCitiesArray[row])
+        print(weatherDataModel.userCitiesArray[row])
         
-        WEATHER_URL = firstUrlPart + userCitiesArray[row] + lastUrlPart
+        WEATHER_URL = firstUrlPart + weatherDataModel.userCitiesArray[row] + lastUrlPart
         getWeatherData(url: WEATHER_URL)
         retrieveCities()
         pickerView.reloadAllComponents()
     }
     
     func updateLabel(){
-        cityLabel.text = currentCity
+        cityLabel.text = weatherDataModel.currentCity
         
-       firstDayLabel.text = morningTemperature[0] + celsius
-       firstNightLabel.text = nightTemperature[0] + celsius
+       firstDayLabel.text = weatherDataModel.morningTemperature[0] + celsius
+       firstNightLabel.text = weatherDataModel.nightTemperature[0] + celsius
     }
     
     override func viewDidLoad() {
@@ -126,23 +119,23 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
         print("in JSON entered")
         if let checkCity = json["query"]["results"]["channel"]["location"]["city"].string {
             let countIndex: Int = 7
-            currentCity = checkCity
+            weatherDataModel.currentCity = checkCity
             
             //clear arrys before fill
-            nightTemperature.removeAll()
-            arrayOfDate.removeAll()
-            arrayOfWeekDays.removeAll()
-            morningTemperature.removeAll()
+            weatherDataModel.nightTemperature.removeAll()
+            weatherDataModel.arrayOfDate.removeAll()
+            weatherDataModel.arrayOfWeekDays.removeAll()
+            weatherDataModel.morningTemperature.removeAll()
 
-            cityDescription = json["query"]["results"]["channel"]["location"]["country"].stringValue
+            weatherDataModel.cityDescription = json["query"]["results"]["channel"]["location"]["country"].stringValue
             for item in 0..<countIndex {
                 let farenhLow = json["query"]["results"]["channel"]["item"]["forecast"][item]["low"].stringValue
                 let farenhHigh = json["query"]["results"]["channel"]["item"]["forecast"][item]["high"].stringValue
-                nightTemperature.append(temperatureConverter(temperature: farenhLow))
-                morningTemperature.append(temperatureConverter(temperature: farenhHigh))
-                arrayOfWeekDays.append(json["query"]["results"]["channel"]["item"]["forecast"][item]["day"].stringValue)
-                arrayOfDate.append(json["query"]["results"]["channel"]["item"]["forecast"][item]["date"].stringValue)
-                arrayOfDate[item] = String(arrayOfDate[item].dropLast(4))
+                weatherDataModel.nightTemperature.append(temperatureConverter(temperature: farenhLow))
+                weatherDataModel.morningTemperature.append(temperatureConverter(temperature: farenhHigh))
+                weatherDataModel.arrayOfWeekDays.append(json["query"]["results"]["channel"]["item"]["forecast"][item]["day"].stringValue)
+                weatherDataModel.arrayOfDate.append(json["query"]["results"]["channel"]["item"]["forecast"][item]["date"].stringValue)
+                weatherDataModel.arrayOfDate[item] = String(weatherDataModel.arrayOfDate[item].dropLast(4))
             }
             print("in JSON succes!")
         }
@@ -172,9 +165,9 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
             for item in snapshot.children{
                 groupCity.append((item as AnyObject).key)
             }
-            self.userCitiesArray.removeAll()
-            self.userCitiesArray.append("Vinnitsia")
-            self.userCitiesArray.append("Kyiv")
+            self.weatherDataModel.userCitiesArray.removeAll()
+            self.weatherDataModel.userCitiesArray.append("Vinnitsia")
+            self.weatherDataModel.userCitiesArray.append("Kyiv")
             for city in groupCity {
                 if self.retrievedCities.contains(city){
                     print("city already exist")
@@ -184,7 +177,7 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
                     self.retrievedCities.append(city)
                 }
             }
-            self.userCitiesArray += self.retrievedCities
+            self.weatherDataModel.userCitiesArray += self.retrievedCities
            
         })
        
@@ -213,13 +206,9 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "sendDataForwards"{
             let detailViewController = segue.destination as! DetailViewController
-            detailViewController.morningTemperature = morningTemperature
-            detailViewController.nightTemperature = nightTemperature
-            detailViewController.arrayOfDate = arrayOfDate
-            detailViewController.arrayOfWeekDays = arrayOfWeekDays
-            detailViewController.currentCity = currentCity
-            detailViewController.cityInfodata = currentCity + ", " + cityDescription
-            detailViewController.cityDescription = cityDescription
+
+           detailViewController.weatherDataModel = weatherDataModel
+            detailViewController.cityInfodata = weatherDataModel.currentCity + ", " + weatherDataModel.cityDescription
  
         }
     }

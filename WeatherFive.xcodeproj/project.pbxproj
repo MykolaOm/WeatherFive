@@ -14,6 +14,7 @@
 		17B5177E1FBB0DB700BB4DC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17B5177C1FBB0DB700BB4DC0 /* Main.storyboard */; };
 		17B517801FBB0DB700BB4DC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17B5177F1FBB0DB700BB4DC0 /* Assets.xcassets */; };
 		17B517831FBB0DB700BB4DC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17B517811FBB0DB700BB4DC0 /* LaunchScreen.storyboard */; };
+		17F507221FC2082000EA1833 /* WeatherDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F507211FC2082000EA1833 /* WeatherDataModel.swift */; };
 		C4EC2A64AD61B24FCF8E8534 /* Pods_WeatherFive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 654057140C7CDF172C65794A /* Pods_WeatherFive.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		17B5177F1FBB0DB700BB4DC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17B517821FBB0DB700BB4DC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17B517841FBB0DB700BB4DC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17F507211FC2082000EA1833 /* WeatherDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataModel.swift; sourceTree = "<group>"; };
 		654057140C7CDF172C65794A /* Pods_WeatherFive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherFive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7926551FCBF62EF017943271 /* Pods-WeatherFive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherFive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherFive/Pods-WeatherFive.debug.xcconfig"; sourceTree = "<group>"; };
 		E5A153755AC9CF5D778C45CC /* Pods-WeatherFive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherFive.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherFive/Pods-WeatherFive.release.xcconfig"; sourceTree = "<group>"; };
@@ -65,16 +67,41 @@
 		17B517771FBB0DB600BB4DC0 /* WeatherFive */ = {
 			isa = PBXGroup;
 			children = (
-				17B517781FBB0DB700BB4DC0 /* AppDelegate.swift */,
-				17B5177A1FBB0DB700BB4DC0 /* ViewController.swift */,
-				17818BAD1FBE72CE001272F1 /* DetailViewController.swift */,
-				17B5177C1FBB0DB700BB4DC0 /* Main.storyboard */,
+				17F5071E1FC206C300EA1833 /* Model */,
+				17F5071F1FC206D500EA1833 /* View */,
+				17F507201FC206DD00EA1833 /* Controller */,
 				17B5177F1FBB0DB700BB4DC0 /* Assets.xcassets */,
 				17B517811FBB0DB700BB4DC0 /* LaunchScreen.storyboard */,
 				17B517841FBB0DB700BB4DC0 /* Info.plist */,
 				1792C23E1FBB31E00017A167 /* GoogleService-Info.plist */,
 			);
 			path = WeatherFive;
+			sourceTree = "<group>";
+		};
+		17F5071E1FC206C300EA1833 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				17F507211FC2082000EA1833 /* WeatherDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		17F5071F1FC206D500EA1833 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				17B5177C1FBB0DB700BB4DC0 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		17F507201FC206DD00EA1833 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				17B517781FBB0DB700BB4DC0 /* AppDelegate.swift */,
+				17B5177A1FBB0DB700BB4DC0 /* ViewController.swift */,
+				17818BAD1FBE72CE001272F1 /* DetailViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		5E4AD9A746B20F21B2B79E1B /* Frameworks */ = {
@@ -234,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17F507221FC2082000EA1833 /* WeatherDataModel.swift in Sources */,
 				17818BAE1FBE72CE001272F1 /* DetailViewController.swift in Sources */,
 				17B5177B1FBB0DB700BB4DC0 /* ViewController.swift in Sources */,
 				17B517791FBB0DB700BB4DC0 /* AppDelegate.swift in Sources */,
