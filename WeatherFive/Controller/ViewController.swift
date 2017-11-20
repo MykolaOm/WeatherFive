@@ -91,8 +91,8 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
     /***************************************************************/
     
     func getWeatherData(url: String) {
-        
-        Alamofire.request(url, method: .get).responseJSON {
+        let modifiedUrl = (url.replacingOccurrences(of: " ", with: "")).replacingOccurrences(of: "'", with: "")
+        Alamofire.request(modifiedUrl, method: .get).responseJSON {
             response in
             if response.result.isSuccess {
                 print("Success! Got the weather data")
