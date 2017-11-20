@@ -154,6 +154,7 @@
                         <outlet property="cityPicker" destination="Jxk-JM-CtD" id="ErV-YK-ZvN"/>
                         <outlet property="firstDayLabel" destination="lBb-pp-GNH" id="qVZ-9j-Yip"/>
                         <outlet property="firstNightLabel" destination="biJ-6X-y8M" id="lFQ-FT-KMD"/>
+                        <outlet property="getWeather" destination="g0C-LD-oOY" id="851-x6-yHJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

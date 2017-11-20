@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 import Firebase
 
-class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
+class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate{
 
     let weatherDataModel = WeatherDataModel()
     var retrievedCities  : [String] = []
@@ -22,7 +22,7 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var changeCityTextField: UITextField!
     @IBOutlet weak var cityPicker: UIPickerView!
-    
+    @IBOutlet weak var getWeather: UIButton!
     
     let firstUrlPart = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text=%27"
 
@@ -79,6 +79,7 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
     
         cityPicker.delegate = self
         cityPicker.dataSource = self
+        changeCityTextField.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -211,6 +212,13 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
             detailViewController.cityInfodata = weatherDataModel.currentCity + ", " + weatherDataModel.cityDescription
  
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        changeCityTextField.resignFirstResponder()
+        print("textField works")
+        getWeatherPressed(getWeather)
+        return true
     }
     
   //LAST ROW IN CONTROLLER
