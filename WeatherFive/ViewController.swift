@@ -107,7 +107,8 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
     
     func getWeatherData(url: String) {
         
-        Alamofire.request(url, method: .get).responseJSON {
+        let modifiedUrl = (url.replacingOccurrences(of: " ", with: "")).replacingOccurrences(of: "'", with: "")
+        Alamofire.request(modifiedUrl, method: .get).responseJSON {
             response in
             if response.result.isSuccess {
                 print("Success! Got the weather data")
@@ -135,6 +136,7 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
         print("in JSON entered")
         if let checkCity = json["query"]["results"]["channel"]["location"]["city"].string {
             let countIndex: Int = 7
+    
             currentCity = checkCity
             
             //clear arrys before fill
