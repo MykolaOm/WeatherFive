@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 import Firebase
 
-class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
+class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     var userCitiesArray : [String] = ["Vinnitsia","Kyiv"]
     var morningTemperature : [String] = []
@@ -28,7 +28,7 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var changeCityTextField: UITextField!
     @IBOutlet weak var cityPicker: UIPickerView!
-    
+    @IBOutlet weak var getWeather: UIButton!
     
     let firstUrlPart = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text=%27"
 
@@ -36,20 +36,27 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
    
     let lastUrlPart = "%27)&format=json&%22"
     
-    //lazy var WEATHER_URL = "\(firstUrlPart)\(city[0])\(lastUrlPart)"
     
     var WEATHER_URL = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text=%27vinnitsia%27)&format=json&%22"
     
    
     @IBAction func getWeatherPressed(_ sender: UIButton) {
+
         if changeCityTextField != nil {
             
             currentCity = changeCityTextField.text!
             WEATHER_URL = firstUrlPart + currentCity + lastUrlPart
             getWeatherData(url: WEATHER_URL)
+
+            changeCityTextField.resignFirstResponder()
         }
     }
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        changeCityTextField.resignFirstResponder()
+        print("textField works")
+        getWeatherPressed(getWeather)
+        return true
+    }
     // MARK: UIPickerView func
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -86,6 +93,8 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
     
         cityPicker.delegate = self
         cityPicker.dataSource = self
+        changeCityTextField.delegate = self
+        
     }
     
     override func didReceiveMemoryWarning() {

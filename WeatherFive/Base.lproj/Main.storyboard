@@ -106,6 +106,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="Qek-RV-rqq"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0C-LD-oOY">
                                         <rect key="frame" x="75.999999999999986" y="86" width="87.000000000000014" height="30"/>
@@ -154,6 +157,7 @@
                         <outlet property="cityPicker" destination="Jxk-JM-CtD" id="ErV-YK-ZvN"/>
                         <outlet property="firstDayLabel" destination="lBb-pp-GNH" id="qVZ-9j-Yip"/>
                         <outlet property="firstNightLabel" destination="biJ-6X-y8M" id="lFQ-FT-KMD"/>
+                        <outlet property="getWeather" destination="g0C-LD-oOY" id="hIh-fc-hnB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
