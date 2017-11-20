@@ -154,12 +154,13 @@ class ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
                 arrayOfDate[item] = String(arrayOfDate[item].dropLast(4))
             }
             print("in JSON succes!")
+            updateLabel()
         }
         else {
             print( "Weather Unavailable")
         }
 
-        updateLabel()
+
     }
     // MARK: CONVERTER
     /***************************************************************/
